@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="assets/css/login.css">
+    <link rel="stylesheet" href="assets/css/responsivo.css">
+</head>
+<body>
+    
+<div class="login-container">
+        <div class="logo">TANAJÓ</div>
+        <h2 class="welcome-text">Bem-vindo de volta!</h2>
+        <p class="access-account">Acesse sua conta</p>
+        
+        <form id="loginForm">
+            <div class="form-group">
+                <label for="email">E-mail</label>
+                <div class="input-container">
+                    <input type="email" id="email" placeholder="Digite o seu e-mail" required>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="password">Senha</label>
+                <div class="input-container">
+                    <input type="password" id="password" placeholder="Digite a sua Senha" required>
+                    <span class="password-toggle" id="togglePassword">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" viewBox="0 0 16 16">
+                            <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0"/>
+                            <path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8m8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7"/>
+                        </svg>
+                    </span>
+                </div>
+                <div class="forgot-password">
+                    <a href="#">Esqueceu sua senha? Recuperar agora</a>
+                </div>
+            </div>
+            
+            <button type="submit" class="login-button">Entrar</button>
+            
+            <div class="create-account">
+                <span>Novo por aqui? <a href="cadastro.html">Crie uma conta</a></span>
+            </div>
+        </form>
+    </div>
+    
+    <div class="image-container">
+        <img src="assets/img/Female chef clothing apparel person _ Premium AI-generated image.png" alt="Chef in white uniform">
+    </div>
+
+
+<script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,144 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter 18pt 18pt', sans-serif;
+    text-decoration: none;
+    list-style: none;
+}
+
+:root {
+    --color-1: #4D6BFE;    /* Azul Principal */
+    --color-2: #FFFFFF;    /* Branco */
+    --color-3: #000000;    /* Preto */
+    --color-4: #F6F9FF;    /* Branco Azulado */
+    --color-5: #DFDBDB;    /* Cinza Claro */
+    --color-6: #F12A2A;    /* Vermelho */
+    --color-7:#E1DDE1;
+    --transition: all 0.3s ease-in-out;
+    --box-shadow-color: rgba(149, 157, 165, 0.089) 0px 8px 24px;
+}
+
+ body {
+            display: flex;
+            height: 100vh;
+            overflow: hidden;
+    
+ }
+
+        .left-panel {
+            flex: 1;
+            background-color: var(--color-2);
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .right-panel {
+            flex: 1;
+            background-color: var(--color-2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .right-panel img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .logo {
+            color: #4d69ff;
+            font-weight: bold;
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        .subtitle {
+            color: #333;
+            font-size: 14px;
+            margin-bottom: 40px;
+        }
+
+        .create-preacher {
+            position: absolute;
+            top: 40px;
+            right: 40px;
+            color: var(--color-2);
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            color: #333;
+            margin-bottom: 8px;
+        }
+
+        .input-field {
+            width: 100%;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            font-size: 14px;
+            outline: none;
+            display: flex;
+            align-items: center;
+        }
+
+        .input-field svg {
+            margin-right: 10px;
+            color: #777;
+        }
+
+        .input-field input {
+            flex: 1;
+            border: none;
+            outline: none;
+            font-size: 14px;
+            background: transparent;
+        }
+
+        .forgot-password {
+            text-align: left;
+            margin-bottom: 20px;
+        }
+
+        .forgot-password a {
+            color: #333;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .btn-create {
+            width: 100%;
+            padding: 15px;
+            background-color: #4d69ff;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-bottom: 20px;
+        }
+
+        .login-link {
+            text-align: center;
+            font-size: 14px;
+        }
+
+        .login-link a {
+            color: #4d69ff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .password-toggle {
+            cursor: pointer;
+            color: #777;
+        }

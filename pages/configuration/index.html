@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Configurações de Perfil</title>
+    <link rel="stylesheet" href="../../assets/css/configuration/index.css">
+</head>
+<body>
+    <div class="sidebar">
+        <h1 class="sidebar-title">Configurações</h1>
+        <ul class="sidebar-menu">
+        <a href="index.html">
+            <li class="sidebar-menu-item active">
+                <span class="sidebar-menu-item-icon">⚙️</span>
+                Geral
+            </li>
+        </a>
+        <a href="profile.html">
+            <li class="sidebar-menu-item">
+                <a class="sidebar-menu-item-icon">👤</a>
+                Editar perfil
+            </li>
+        </a>
+            <a href="preferences.html">
+            <li class="sidebar-menu-item">
+                <span class="sidebar-menu-item-icon">⚙️</span>
+                Preferências
+            </li>
+        </a>
+        <a href="notification.html">
+            <li class="sidebar-menu-item">
+                <span class="sidebar-menu-item-icon">🔔</span>
+                Notificações
+            </li>
+        </a>
+        <a href="delete.html">
+            <li class="sidebar-menu-item ">
+                <span class="sidebar-menu-item-icon">🚪</span>
+                Encerrar conta
+            </li>
+        </a>
+        </ul>
+    </div>
+    <div class="content">
+        <div class="content-header">
+            <div class="back-button">
+                <i class="fas fa-chevron-left"></i>
+            </div>
+            <h2 class="content-title">Geral</h2>
+        </div>
+        
+        <div class="profile-card">
+            <div class="profile-header">
+                <div class="profile-pic">TA</div>
+                <div class="profile-name">Teresa Adriano</div>
+            </div>
+            
+            <form>
+                <div class="form-group">
+                    <label class="form-label">Nome</label>
+                    <div class="input-icon">
+                        <i class="fas fa-user"></i>
+                        <input type="text" class="form-control" value="Teresa Adriano">
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">Email</label>
+                    <div class="input-icon">
+                        <i class="fas fa-envelope"></i>
+                        <input type="email" class="form-control" value="exemplo@gmail.com">
+                    </div>
+                </div>
+                
+                <button type="button" class="btn-save">Salvar alterações</button>
+            </form>
+        </div>
+    </div>
+    
+    <script>
+        // JavaScript pode ser adicionado aqui se necessário
+        document.querySelectorAll('.menu-item').forEach(item => {
+            item.addEventListener('click', function() {
+                document.querySelector('.menu-item.active').classList.remove('active');
+                this.classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>
