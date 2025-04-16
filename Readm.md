@@ -4,6 +4,8 @@
 
 **TANAJÓ** é uma plataforma digital inovadora focada na **empregabilidade e formação profissional**. Ela conecta **candidatos**, **empresas** e **instituições de ensino**, oferecendo uma experiência eficiente, acessível e moderna para quem busca **emprego** ou **qualificação profissional**.
 
+![Image](https://github.com/user-attachments/assets/6db99248-7013-4684-a315-2b2ef68504d7)
+
 ---
 
 ## 🎯 Objetivos do Projeto

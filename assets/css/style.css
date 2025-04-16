@@ -158,9 +158,12 @@ li{
     cursor: pointer;
 }
 
-.btn_cadastrar:hover{
+#cadastro{
+    color: var(--color-1);
+}
+
+.btn_cadastrar a:hover{
     background: transparent;
-    color: var(--color-2);
 }
 
 .signup-btn:hover {
@@ -234,6 +237,15 @@ top: 0.2rem;
     margin: 0 auto;
     max-width: 1200px;
     margin-top: 2rem;
+}
+
+.card{
+    background: var(--color-2);
+    border-radius: 1.2rem;
+}
+
+.card-image{
+    border-radius: 1.2rem;
 }
 
 .card-container div{
@@ -414,9 +426,15 @@ top: 0.2rem;
         /* ---------------------------------------------- */
 
  .footer {
-            background-color: #5567FF;
-            color: white;
+            background-color: var(--color-1);
+            color: var(--color-2);
             padding: 2rem 5%;
+        }
+
+        .logo{
+            color: var(--color-2);
+            font-size: 1.9rem;
+            font-weight: 300;
         }
 
         .footer-content {
@@ -433,6 +451,8 @@ top: 0.2rem;
 
         .footer-links h4 {
             margin-bottom: 1rem;
+            font-size: 1.5rem;
+            font-weight: 300;
         }
 
         .footer-links ul {
@@ -441,12 +461,13 @@ top: 0.2rem;
 
         .footer-links li {
             margin-bottom: 0.5rem;
+        
         }
 
         .footer-links a {
-            color: white;
+            color: var(--color-2);
             text-decoration: none;
-            font-size: 0.9rem;
+             font-size: 1.5rem;
         }
 
         .footer-social {
@@ -458,15 +479,14 @@ top: 0.2rem;
         .social-icon {
             width: 30px;
             height: 30px;
-            background-color: white;
+            background-color: var(--color-2);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #5567FF;
-            font-weight: bold;
+            color: var(--color-1);
+            cursor: pointer;
         }
-
 
         .category-section {
             padding: 2rem;
@@ -552,8 +572,3 @@ top: 0.2rem;
         .dot.active {
             background-color: #5567FF;
         }
-
-       
-
-
-      
