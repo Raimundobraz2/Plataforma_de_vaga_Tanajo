@@ -1,406 +1,169 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TANAJÓ - Plataforma de Empregos</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    }
-    
-    body {
-      background-color: #f5f7fa;
-    }
-    
-    .header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 15px 40px;
-      background-color: white;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-    }
-    
-    .logo {
-      color: #4f5eef;
-      font-size: 24px;
-      font-weight: bold;
-      text-decoration: none;
-    }
-    
-    .nav {
-      display: flex;
-      gap: 15px;
-      align-items: center;
-    }
-    
-    .nav-item {
-      text-decoration: none;
-      color: #666;
-      display: flex;
-      align-items: center;
-      gap: 5px;
-      padding: 8px 15px;
-      border-radius: 5px;
-      font-size: 14px;
-    }
-    
-    .nav-item.active {
-      color: #4f5eef;
-      border-bottom: 3px solid #4f5eef;
-    }
-    
-    .profile-section {
-      display: flex;
-      align-items: center;
-      gap: 15px;
-    }
-    
-    .notification {
-      position: relative;
-      cursor: pointer;
-    }
-    
-    .notification-badge {
-      position: absolute;
-      top: -5px;
-      right: -5px;
-      background-color: #ff5252;
-      color: white;
-      border-radius: 50%;
-      width: 8px;
-      height: 8px;
-      font-size: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    
-    .profile {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      cursor: pointer;
-    }
-    
-    .profile-pic {
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      background-color: #f0f0f0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-      border: 2px solid #eaeaea;
-    }
-    
-    .profile-pic img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-    
-    .main-content {
-      max-width: 1100px;
-      margin: 30px auto;
-      padding: 30px;
-      background-color: white;
-      border-radius: 8px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-    }
-    
-    .search-section {
-      display: flex;
-      justify-content: space-between;
-      margin-bottom: 30px;
-    }
-    
-    .search-bar {
-      position: relative;
-      flex: 1;
-      max-width: 800px;
-    }
-    
-    .search-bar input {
-      width: 100%;
-      padding: 12px 12px 12px 40px;
-      border: 1px solid #e0e0e0;
-      border-radius: 6px;
-      font-size: 14px;
-      outline: none;
-    }
-    
-    .search-icon {
-      position: absolute;
-      left: 12px;
-      top: 50%;
-      transform: translateY(-50%);
-      color: #777;
-    }
-    
-    .filter-button {
-      background-color: #4f5eef;
-      color: white;
-      border: none;
-      border-radius: 6px;
-      padding: 12px 24px;
-      font-size: 14px;
-      font-weight: 500;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-    
-    .filter-panel {
-      position: absolute;
-      right: 40px;
-      top: 220px;
-      background-color: white;
-      border-radius: 8px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-      padding: 20px;
-      width: 250px;
-      z-index: 1000;
-    }
-    
-    .filter-option {
-      margin-bottom: 12px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-    
-    .filter-option input[type="radio"] {
-      accent-color: #4f5eef;
-      width: 16px;
-      height: 16px;
-    }
-    
-    .filter-option label {
-      font-size: 14px;
-      color: #444;
-    }
-    
-    .matching-text {
-      font-size: 18px;
-      font-weight: 500;
-      color: #333;
-      margin-bottom: 24px;
-    }
-    
-    .job-list {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-    }
-    
-    .job-card {
-      border-bottom: 1px solid #eaeaea;
-      padding-bottom: 20px;
-    }
-    
-    .job-header {
-      display: flex;
-      align-items: center;
-      gap: 15px;
-      margin-bottom: 12px;
-    }
-    
-    .job-icon {
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      background-color: #f6f7ff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-    }
-    
-    .job-icon img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-    
-    .job-title {
-      color: #4f5eef;
-      font-size: 18px;
-      font-weight: 500;
-      text-decoration: none;
-    }
-    
-    .job-company {
-      font-size: 14px;
-      color: #555;
-      margin-top: 8px;
-    }
-    
-    .job-description {
-      font-size: 14px;
-      color: #666;
-      line-height: 1.5;
-      margin-bottom: 8px;
-    }
-    
-    .job-location {
-      font-size: 14px;
-      color: #666;
-    }
-    
-    .filter-active {
-      background-color: #f0f3ff;
-      border-radius: 12px;
-    }
-
-    .area-option.active {
-      background-color: #f0f3ff;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página inicial</title>
+    <link rel="stylesheet" href="assets/css/myJobs.css">
+    <link rel="stylesheet" href="assets/css/responsivo.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"rel="stylesheet"/>
 </head>
 <body>
-  <header class="header">
-    <a href="#" class="logo">TANAJÓ</a>
-    
-    <nav class="nav">
-      <a href="#" class="nav-item">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
-          <polyline points="9 22 9 12 15 12 15 22"></polyline>
-        </svg>
-        Página Inicial
-      </a>
-      <a href="#" class="nav-item active">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
-          <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
-        </svg>
-        Minhas vagas
-      </a>
-      <a href="#" class="nav-item">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
-        </svg>
-        Formações
-      </a>
-    </nav>
-    
-    <div class="profile-section">
-      <div class="notification">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
-          <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
-        </svg>
-        <span class="notification-badge"></span>
-      </div>
-      
-      <div class="profile">
-        <div class="profile-pic">
-            <img src="assets/img/profile-img.png" alt="Profile" class="profile-avatar">
+
+    <header>
+        <a href="#" class="logo">TANAJÓ</a>
+        <div class="search-container">
+            <span class="search-icon"><i class="ri-search-2-line"></i></span>
+            <input type="text" placeholder="Pesquisa">
         </div>
-        <span>Teresa Adriano</span>
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <polyline points="6 9 12 15 18 9"></polyline>
-        </svg>
-      </div>
+        
+        <nav>
+            <div class="nav-links">
+                <a href="#" class="nav-link active" id="color_ative">
+                    <span><i class="ri-home-line"></i></span> Página Inicial
+                </a>
+                <a href="#" class="nav-link ">
+                    <span><i class="ri-article-line"></i></span> Minhas vagas
+                </a>
+            </div>
+            
+            <div class="notification-container" id="notificationBtn">
+                <span><i class="ri-notification-line"></i></span>
+                <span class="notification-badge">6</span>
+            </div>
+            
+            <div class="user-profile">
+                <img src="assets/img/profile-img.png" alt="Teresa Adriano" class="user-avatar">
+                <span>Teresa Adriano</span>
+                <span class="dropdown-icon"><i class="ri-arrow-up-s-line"></i></span>
+            </div>
+        </nav>
+    </header>
+    
+    <main class="main-content">
+        <div class="job-card">
+            <img src="assets/img/afea4a4e-fd5d-4607-8886-38d3f665e4bd.jpeg" alt="Job image" class="job-image">
+            
+            <div class="job-details">
+                <h2 class="job-title">Cozinheira</h2>
+                <p class="job-company">Empresa: Casa Limpa</p>
+                
+                <div class="job-info">
+                    <div class="info-item">
+                        <div class="info-icon"><i class="ri-map-pin-2-line"></i></div>
+                        <span>Localização: Luanda, Angola</span>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon"><i class="ri-money-dollar-circle-line"></i></div>
+                        <span>Salário: 50.000 Kz/mês</span>
+                    </div>
+                </div>
+                
+                <p><strong>Função:</strong> Arrumadeira</p>
+                <p class="job-description">
+                    <strong>Descrição:</strong> Realizar limpeza e organização de ambientes residenciais,
+                    com foco na manutenção da ordem e higiene.
+                </p>
+                
+                <div class="job-meta">
+                    <span>2 dias atrás · Data de Postagem: 02/04/2023</span>
+                </div>
+                
+                <div class="job-actions">
+                    <button class="btn btn-primary">Candidatar-se</button>
+                    <button class="btn btn-outline" id="viewDetailsBtn">Ver detalhes</button>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <!-- Job Details Modal -->
+    <div class="modal-overlay" id="jobDetailsModal">
+        <div class="modal">
+            <div class="modal-header">
+                <h3 class="modal-title">Detalhes da Vaga</h3>
+                <button class="modal-close" id="closeJobDetailsModal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <h2 class="modal_h2">Arrumadeira - Casa Limpa</h2>
+                <p><strong>Empresa:</strong> Casa Limpa</p>
+                <div class="modal_img"><img src="assets/img/afea4a4e-fd5d-4607-8886-38d3f665e4bd.jpeg" alt=""></div>
+                <p><strong>Localização:</strong> Luanda, Angola</p>
+                <p><strong>Salário:</strong> 50.000 Kz/mês</p>
+                <p><strong>Função:</strong> Arrumadeira</p>
+                
+                <h3>Descrição da Vaga</h3>
+                <p>Realizar limpeza e organização de ambientes residenciais, com foco na manutenção da ordem e higiene.</p>
+                
+                <h3>Requisitos</h3>
+                <ul>
+                    <li>Experiência prévia em limpeza doméstica</li>
+                    <li>Capacidade de organização</li>
+                    <li>Atenção aos detalhes</li>
+                    <li>Disponibilidade para trabalhar em horário comercial</li>
+                </ul>
+                
+                <h3>Benefícios</h3>
+                <ul>
+                    <li>Vale transporte</li>
+                    <li>Alimentação no local</li>
+                    <li>Seguro saúde</li>
+                </ul>
+                
+                <div style="margin-top: 20px;">
+                    <button class="btn btn-primary">Candidatar-se</button>
+                </div>
+            </div>
+        </div>
     </div>
-  </header>
-  
-  <main class="main-content">
-    <div class="search-section">
-      <div class="search-bar">
-        <div class="search-icon">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="11" cy="11" r="8"></circle>
-            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-          </svg>
-        </div>
-        <input type="text" placeholder="Pesquisa">
-      </div>
-      
-      <button class="filter-button">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <line x1="4" y1="21" x2="4" y2="14"></line>
-          <line x1="4" y1="10" x2="4" y2="3"></line>
-          <line x1="12" y1="21" x2="12" y2="12"></line>
-          <line x1="12" y1="8" x2="12" y2="3"></line>
-          <line x1="20" y1="21" x2="20" y2="16"></line>
-          <line x1="20" y1="12" x2="20" y2="3"></line>
-          <line x1="1" y1="14" x2="7" y2="14"></line>
-          <line x1="9" y1="8" x2="15" y2="8"></line>
-          <line x1="17" y1="16" x2="23" y2="16"></line>
-        </svg>
-        Filtro
-      </button>
-    </div>
     
-    <div class="filter-panel">
-      <div class="filter-option">
-        <input type="radio" id="area" name="filter" checked>
-        <label for="area">Área</label>
-      </div>
-      <div class="filter-option">
-        <input type="radio" id="location" name="filter">
-        <label for="location">Localização</label>
-      </div>
-      <div class="filter-option">
-        <input type="radio" id="salary" name="filter">
-        <label for="salary">Faixa salarial</label>
-      </div>
-      <div class="filter-option">
-        <input type="radio" id="position" name="filter">
-        <label for="position">Cargo</label>
-      </div>
-    </div>
-    
-    <h2 class="matching-text">Vagas que combinam com o seu perfil</h2>
-    
-    <div class="job-list">
-      <!-- Job Card 1 -->
-      <div class="job-card">
-        <div class="job-header">
-          <div class="job-icon">
-            <img src="assets/img/profile-img.png" alt="Profile" class="profile-avatar">
-          </div>
-          <a href="#" class="job-title">Arrumadeira</a>
+    <!-- Notification Modal -->
+    <div class="modal-overlay" id="notificationModal">
+        <div class="modal">
+            <div class="modal-header">
+                <h3 class="modal-title">Notificações</h3>
+                <button class="modal-close" id="closeNotificationModal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <ul class="notification-list" id="notificationList">
+                    <li class="notification-item">
+                        <div class="notification-content">
+                            <p>Sua candidatura para a vaga de Arrumadeira foi recebida!</p>
+                            <small>Hoje, 14:35</small>
+                        </div>
+                        <div class="notification-actions">
+                            <button class="notification-action mark-read" data-id="1">✓</button>
+                            <button class="notification-action delete" data-id="1">🗑️</button>
+                        </div>
+                    </li>
+                    <li class="notification-item">
+                        <div class="notification-content">
+                            <p>Nova vaga de emprego disponível: Cozinheira em Luanda</p>
+                            <small>Ontem, 09:20</small>
+                        </div>
+                        <div class="notification-actions">
+                            <button class="notification-action mark-read" data-id="2">✓</button>
+                            <button class="notification-action delete" data-id="2">🗑️</button>
+                        </div>
+                    </li>
+                    <li class="notification-item">
+                        <div class="notification-content">
+                            <p>Lembrete: Complete seu perfil para aumentar suas chances</p>
+                            <small>3 dias atrás</small>
+                        </div>
+                        <div class="notification-actions">
+                            <button class="notification-action mark-read" data-id="3">✓</button>
+                            <button class="notification-action delete" data-id="3">🗑️</button>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="notification-footer">
+                <button class="btn btn-outline" id="markAllAsRead">Marcar todas como lidas</button>
+                <button class="btn btn-outline" id="deleteAllNotifications">Limpar todas</button>
+            </div>
         </div>
-        <div class="job-company">Casa limpa</div>
-        <div class="job-description">Descrição: Realizar limpeza e organização de ambientes residenciais, com foco na manutenção da ordem e higiene.</div>
-        <div class="job-location">Luanda, Luanda, Angola (Presencial)</div>
-      </div>
-      
-      <!-- Job Card 2 -->
-      <div class="job-card">
-        <div class="job-header">
-          <div class="job-icon">
-            <img src="assets/img/profile-img.png" alt="Profile" class="profile-avatar">
-          </div>
-          <a href="#" class="job-title">Arrumadeira</a>
-        </div>
-        <div class="job-company">Casa limpa</div>
-        <div class="job-description">Descrição: Realizar limpeza e organização de ambientes residenciais, com foco na manutenção da ordem e higiene.</div>
-        <div class="job-location">Luanda, Luanda, Angola (Presencial)</div>
-      </div>
-      
-      <!-- Job Card 3 -->
-      <div class="job-card">
-        <div class="job-header">
-          <div class="job-icon">
-            <img src="assets/img/profile-img.png" alt="Profile" class="profile-avatar">
-          </div>
-          <a href="#" class="job-title">Arrumadeira</a>
-        </div>
-        <div class="job-company">Casa limpa</div>
-        <div class="job-description">Descrição: Realizar limpeza e organização de ambientes residenciais, com foco na manutenção da ordem e higiene.</div>
-        <div class="job-location">Luanda, Luanda, Angola (Presencial)</div>
-      </div>
-    </div>
-  </main>
+    </div>      
+<script src="js/myJobs.js"></script>
 </body>
 </html>
