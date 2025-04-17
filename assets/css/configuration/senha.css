@@ -19,105 +19,96 @@
     --box-shadow-color: rgba(149, 157, 165, 0.089) 0px 8px 24px;
 }
 
-  body {
+body {
             display: flex;
-            height: 100vh;
+            min-height: 100vh;
             overflow: hidden;
-            background: var(--color-4);
         }
 
-        .login-container {
-            width: 50%;
+        .left-panel {
+            flex: 1;
+            padding: 40px;
             display: flex;
             flex-direction: column;
-            justify-content: center;
-            padding: 0 80px;
+            background-color: var(--color-4);
         }
 
-        .image-container {
-            width: 50%;
+        .right-panel {
+            flex: 1;
+            background-color: var(--color-1);
+            position: relative;
             overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
-        .image-container img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+        .right-panel img{
+            width: 80%;
         }
 
         .logo {
             color: var(--color-1);
             font-size: 24px;
-            font-weight: bold;
-            margin-bottom: 20px;
+            font-weight: 400;
+            margin-bottom: 40px;
         }
 
-        .welcome-text {
-            margin-bottom: 5px;
-            font-weight: 500;
+        h1 {
+            font-size: 20px;
+            margin-bottom: 10px;
             color: var(--color-3);
         }
 
-        .access-account {
+        p {
             color: var(--color-3);
             margin-bottom: 30px;
+            font-size: 14px;
+            line-height: 1.5;
+            font-weight: 400;
         }
 
         .form-group {
             margin-bottom: 20px;
         }
 
-        label {
+        .form-label {
             display: block;
             margin-bottom: 10px;
+            color: var(--color-3);
             font-size: 14px;
         }
 
         .input-container {
             position: relative;
-            display: flex;
-            align-items: center;
         }
 
-        input{
-            width: 100%;
-            padding: 15px;
-            border: 1px solid var(--color-7);
-            border-radius: 8px;
-            font-size: 14px;
-        }
-
-        input:focus {
+         input:focus {
             outline: none;
             border-color: var(--color-1);
         }
 
-        .password-toggle {
+        .form-input {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 14px;
+            padding-right: 40px;
+        }
+
+        .toggle-password {
             position: absolute;
-            right: 15px;
+            right: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
             cursor: pointer;
             color: var(--color-1);
         }
 
-        .forgot-password {
-            margin-top: 5px;
-            text-align: left;
-            font-size: 14px;
-            color: var(--color-3);
-        }
-
-        .forgot-password a {
-            text-decoration: none;
-             color: var(--color-3);
-            cursor: pointer;
-        }
-
-          .forgot-password a:hover{
-               color: var(--color-1);
-            transition: all ease 0.4s;
-        }
-
-         .button{
+  .button{
            width: 100%;
             padding: 15px 200px;
             background-color: #4d69ff;
@@ -139,19 +130,12 @@
             background-color: #3b50d8;
         }
 
-        .create-account {
-            text-align: center;
-            font-size: 14px;
-            color: var(--color-3);
-        }
 
-        .create-account a {
-            text-decoration: none;
-            color: var(--color-3);
-            cursor: pointer;
-        }
-
-        .create-account a:hover{
-            color: var(--color-1);
-            transition: all ease 0.4s;
+        @media (max-width: 768px) {
+            body {
+                flex-direction: column;
+            }
+            .right-panel {
+                display: none;
+            }
         }

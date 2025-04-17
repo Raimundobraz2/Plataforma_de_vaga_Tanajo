@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nova senha</title>
+    <link rel="stylesheet" href="assets/css/configuration/senha.css">
+    <link rel="stylesheet" href="assets/css/responsivo.css">
+</head>
+<body>
+      <div class="left-panel">
+        <div class="logo">TANAJÓ</div>
+        <h1>Crie uma nova senha</h1>
+        <p>Defina uma nova senha segura para acessar sua conta. Certifique-se de escolher uma senha forte e fácil de lembrar.</p>
+        
+        <div class="form-group">
+            <label class="form-label">Nova Senha</label>
+            <div class="input-container">
+                <input type="password" id="password" class="form-input" placeholder="Digite uma nova senha segura">
+                <button type="button" class="toggle-password" onclick="togglePasswordVisibility('password')">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                        <circle cx="12" cy="12" r="3"></circle>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="form-label">Senha</label>
+            <div class="input-container">
+                <input type="password" id="confirmPassword" class="form-input" placeholder="Repita a nova senha para confirmação">
+                <button type="button" class="toggle-password" onclick="togglePasswordVisibility('confirmPassword')">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                        <circle cx="12" cy="12" r="3"></circle>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <div class="button">
+                <a href="#" class="confirma">Confirmar nova senha</a></span>
+            </div>
+        <!-- <button class="button">Confirmar nova senha</button> -->
+    </div>
+
+    <div class="right-panel">
+        <img src="assets/img/My password-cuate (1).svg" alt="Pessoa interagindo com tela de senha" class="character">
+    </div>
+<script src="js/senha.js"></script>
+</body>
+</html>

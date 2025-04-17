@@ -22,121 +22,119 @@
  body {
             display: flex;
             height: 100vh;
-            overflow: hidden;
-            background: var(--color-4);
- }
-
-        .left-panel {
-            flex: 1;
-            padding: 40px;
+            background-color: var(--color-4);
+        }
+        
+        .form-container {
+            width: 50%;
+            padding: 40px 60px;
             display: flex;
             flex-direction: column;
             justify-content: center;
         }
-
-        .right-panel {
-            flex: 1;
-            background-color: var(--color-2);
-            position: relative;
+        
+        .image-container {
+            width: 50%;
+            background-color: #f0f0f2;
             overflow: hidden;
         }
-
-        .right-panel img {
+        
+        .image-container img {
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
-
+        
         .logo {
-            color: #4d69ff;
+            color: #4169E1;
+            font-size: 24px;
             font-weight: bold;
-            font-size: 28px;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
-
+        
         .subtitle {
-            color:var(--color-3);
-            font-size: 14px;
+            font-size: 16px;
+            color: var(--color-3);
             margin-bottom: 40px;
         }
-
-        .create-preacher {
-            position: absolute;
-            top: 40px;
-            right: 40px;
-            color: var(--color-2);
-            font-size: 14px;
-            cursor: pointer;
-        }
-
+           
         .form-group {
             margin-bottom: 20px;
         }
-
-        .form-group label {
+        
+        .form-label {
             display: block;
-            color: var(--color-3);
             margin-bottom: 8px;
+            color: var(--color-3);
+            font-size: 14px;
         }
-
-        .input-field {
+        
+        .form-input {
             width: 100%;
             padding: 15px;
-            border-radius: 8px;
+            border-radius: 5px;
             border: 1px solid #ddd;
             font-size: 14px;
             display: flex;
             align-items: center;
             background: var(--color-2);
         }
-
-        .input-field svg {
-            margin-right: 10px;
-            color: var(--color-1);
-        }
-
-        .input-field input {
-            flex: 1;
+        
+        .form-input input {
             border: none;
             outline: none;
+            width: 100%;
             font-size: 14px;
         }
-
-        .forgot-password {
-            text-align: left;
-            margin-bottom: 24px;
+        
+        .icon {
+            color:var(--color-1);
+            font-size: 16px;
         }
-
-        .forgot-password a {
+        
+        .password-input {
+            position: relative;
+        }
+        
+        .toggle-password {
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            color: var(--color-3);
+        }
+        
+        .forgot-password {
+            font-size: 14px;
             color: var(--color-3);
             text-decoration: none;
-            font-size: 14px;
+            margin-top: 5px;
+            display: inline-block;
         }
 
-        .forgot-password a:hover{
+        .forgot-password:hover{
             color: var(--color-1);
             transition: all ease 0.5s;
         }
-          .empregador{
-            color: var(--color-2);
-        }
-        
+  
         .btn-create {
             width: 100%;
-            padding: 15px 279px;
-            background-color: #4d69ff;
+            padding: 15px;
+            background-color: #4169E1;
             color: white;
             border: none;
-            border-radius: 8px;
+            border-radius: 5px;
             font-size: 16px;
             cursor: pointer;
-             margin-bottom: 20px; 
+            margin-top: 20px;
+            margin-bottom: 20px;
         }
 
-        .login-link {
+     .login-link {
             text-align: center;
             font-size: 14px;
-            margin-top: 2rem;
+            margin-top: 23px;
         }
 
         .login-link a {
@@ -145,7 +143,22 @@
             font-weight: 500;
         }
 
-        .password-toggle {
+          .btn-create {
+            width: 100%;
+            padding: 15px 239px;
+            background-color: #4d69ff;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
             cursor: pointer;
-            color: #777;
+             margin-bottom: 20px; 
         }
+        .btn-create a{
+             text-align: center;
+             margin-left: 2rem;
+             color: var(--color-2);
+        }
+
+       
+         
