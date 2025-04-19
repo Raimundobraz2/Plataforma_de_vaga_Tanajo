@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vagas</title>
+     <link rel="stylesheet" href="../../assets/css/empregador/vaga.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
+</head>
+<body>
+<header class="header">
+    <div class="logo">TANAJÓ</div>
+    <div class="user-profile">
+        <div class="notification-icon">
+        <i class="ri-notification-line"></i>
+            <span class="notification-badge"></span>
+        </div>
+        <div class="user-avatar"><img src="/assets/img/profile-img.png" alt=""></div>
+        <div class="user-name">Teresa Adriano</div>
+        <i class="ri-arrow-drop-up-line"></i>
+    </div>
+</header>
+
+<div class="container">
+    <div class="sidebar">
+        <div class="sidebar-item">
+        <i class="ri-window-line"></i>
+        <a href="#">Painel de Controle</a>
+        </div>
+        <div class="sidebar-item active">
+            <i class="ri-article-line"></i>
+            <a href="#" class="text_vaga" >Vagas</a>
+        </div>
+        <div class="sidebar-item">
+        <i class="ri-group-line"></i>
+            <a href="#">Candidatos Inscritos</a>
+        </div>
+        <div class="sidebar-item">
+            <i class="ri-settings-2-line"></i>
+            <a href="#">Configurações</a>
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="content-header">
+            <div></div>
+            <button class="create-job-btn" id="create-job-button" >Criar vagas</button>
+        </div>
+
+        <div class="job-grid">
+        <div class="job-card">
+                <div class="menu-options">
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                </div>
+                <div class="context-menu" style="display: none;">
+                    <div class="menu-item" data-action="edit">Editar</div>
+                    <div class="menu-item" data-action="view">Visualizar</div>
+                    <div class="menu-item" data-action="delete">Eliminar</div>
+                </div>
+                <div class="job-icon"><i class="ri-file-reduce-line"></i></div>
+                <div class="job-title"><h2 class="title">Título da vaga</h2></div>
+                <div class="job-category"><p  class="paragrafo_1">Doméstica</p></div>
+                <div class="job-area-label"><p class="paragrafo_2">Área de atuação</p></div>
+                <div class="job-area"><p class="paragrafo_3">Doméstica</p></div>
+            </div>
+          
+            <div class="job-card">
+                <div class="menu-options">
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                </div>
+                <div class="context-menu" style="display: none;">
+                    <div class="menu-item" data-action="edit">Editar</div>
+                    <div class="menu-item" data-action="view">Visualizar</div>
+                    <div class="menu-item" data-action="delete">Eliminar</div>
+                </div>
+                <div class="job-icon"><i class="ri-file-reduce-line"></i></div>
+                <div class="job-title">
+                    <h2 class="title">Título da vaga</h2>
+                </div>
+                <div class="job-category">
+                    <p class="paragrafo_1">Doméstica</p>
+                </div>
+                <div class="job-area-label">
+                    <p class="paragrafo_2">Área de atuação</p>
+                </div>
+                <div class="job-area">
+                    <p class="paragrafo_3">Doméstica</p>
+                </div>
+            </div>
+
+            <div class="job-card">
+                <div class="menu-options">
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                </div>
+                <div class="context-menu" style="display: none;">
+                    <div class="menu-item" data-action="edit">Editar</div>
+                    <div class="menu-item" data-action="view">Visualizar</div>
+                    <div class="menu-item" data-action="delete">Eliminar</div>
+                </div>
+                <div class="job-icon"><i class="ri-file-reduce-line"></i></div>
+                <div class="job-title">
+                    <h2 class="title">Título da vaga</h2>
+                </div>
+                <div class="job-category">
+                    <p class="paragrafo_1">Doméstica</p>
+                </div>
+                <div class="job-area-label">
+                    <p class="paragrafo_2">Área de atuação</p>
+                </div>
+                <div class="job-area">
+                    <p class="paragrafo_3">Doméstica</p>
+                </div>
+            </div>
+
+            <div class="job-card">
+                <div class="menu-options">
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                </div>
+                <div class="context-menu" style="display: none;">
+                    <div class="menu-item" data-action="edit">Editar</div>
+                    <div class="menu-item" data-action="view">Visualizar</div>
+                    <div class="menu-item" data-action="delete">Eliminar</div>
+                </div>
+                <div class="job-icon"><i class="ri-file-reduce-line"></i></div>
+                <div class="job-title">
+                    <h2 class="title">Título da vaga</h2>
+                </div>
+                <div class="job-category">
+                    <p class="paragrafo_1">Doméstica</p>
+                </div>
+                <div class="job-area-label">
+                    <p class="paragrafo_2">Área de atuação</p>
+                </div>
+                <div class="job-area">
+                    <p class="paragrafo_3">Doméstica</p>
+                </div>
+            </div>
+
+            <div class="job-card">
+                <div class="menu-options">
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                </div>
+                <div class="context-menu" style="display: none;">
+                    <div class="menu-item" data-action="edit">Editar</div>
+                    <div class="menu-item" data-action="view">Visualizar</div>
+                    <div class="menu-item" data-action="delete">Eliminar</div>
+                </div>
+                <div class="job-icon"><i class="ri-file-reduce-line"></i></div>
+                <div class="job-title">
+                    <h2 class="title">Título da vaga</h2>
+                </div>
+                <div class="job-category">
+                    <p class="paragrafo_1">Doméstica</p>
+                </div>
+                <div class="job-area-label">
+                    <p class="paragrafo_2">Área de atuação</p>
+                </div>
+                <div class="job-area">
+                    <p class="paragrafo_3">Doméstica</p>
+                </div>
+            </div>
+
+
+<div class="job-card">
+    <div class="menu-options">
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+    </div>
+    <div class="context-menu" style="display: none;">
+        <div class="menu-item" data-action="edit">Editar</div>
+        <div class="menu-item" data-action="view">Visualizar</div>
+        <div class="menu-item" data-action="delete">Eliminar</div>
+    </div>
+    <div class="job-icon"><i class="ri-file-reduce-line"></i></div>
+    <div class="job-title">
+        <h2 class="title">Título da vaga</h2>
+    </div>
+    <div class="job-category">
+        <p class="paragrafo_1">Doméstica</p>
+    </div>
+    <div class="job-area-label">
+        <p class="paragrafo_2">Área de atuação</p>
+    </div>
+    <div class="job-area">
+        <p class="paragrafo_3">Doméstica</p>
+    </div>
+</div>
+
+<div class="job-card">
+    <div class="menu-options">
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+    </div>
+    <div class="context-menu" style="display: none;">
+        <div class="menu-item" data-action="edit">Editar</div>
+        <div class="menu-item" data-action="view">Visualizar</div>
+        <div class="menu-item" data-action="delete">Eliminar</div>
+    </div>
+    <div class="job-icon"><i class="ri-file-reduce-line"></i></div>
+    <div class="job-title">
+        <h2 class="title">Título da vaga</h2>
+    </div>
+    <div class="job-category">
+        <p class="paragrafo_1">Doméstica</p>
+    </div>
+    <div class="job-area-label">
+        <p class="paragrafo_2">Área de atuação</p>
+    </div>
+    <div class="job-area">
+        <p class="paragrafo_3">Doméstica</p>
+    </div>
+</div>
+
+<div class="job-card">
+    <div class="menu-options">
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+    </div>
+    <div class="context-menu" style="display: none;">
+        <div class="menu-item" data-action="edit">Editar</div>
+        <div class="menu-item" data-action="view">Visualizar</div>
+        <div class="menu-item" data-action="delete">Eliminar</div>
+    </div>
+    <div class="job-icon"><i class="ri-file-reduce-line"></i></div>
+    <div class="job-title">
+        <h2 class="title">Título da vaga</h2>
+    </div>
+    <div class="job-category">
+        <p class="paragrafo_1">Doméstica</p>
+    </div>
+    <div class="job-area-label">
+        <p class="paragrafo_2">Área de atuação</p>
+    </div>
+    <div class="job-area">
+        <p class="paragrafo_3">Doméstica</p>
+    </div>
+</div>
+
+<div class="job-card">
+    <div class="menu-options">
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+    </div>
+    <div class="context-menu" style="display: none;">
+        <div class="menu-item" data-action="edit">Editar</div>
+        <div class="menu-item" data-action="view">Visualizar</div>
+        <div class="menu-item" data-action="delete">Eliminar</div>
+    </div>
+    <div class="job-icon"><i class="ri-file-reduce-line"></i></div>
+    <div class="job-title">
+        <h2 class="title">Título da vaga</h2>
+    </div>
+    <div class="job-category">
+        <p class="paragrafo_1">Doméstica</p>
+    </div>
+    <div class="job-area-label">
+        <p class="paragrafo_2">Área de atuação</p>
+    </div>
+    <div class="job-area">
+        <p class="paragrafo_3">Doméstica</p>
+    </div>
+</div>
+
+<div class="job-card">
+    <div class="menu-options">
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+    </div>
+    <div class="context-menu" style="display: none;">
+        <div class="menu-item" data-action="edit">Editar</div>
+        <div class="menu-item" data-action="view">Visualizar</div>
+        <div class="menu-item" data-action="delete">Eliminar</div>
+    </div>
+    <div class="job-icon"><i class="ri-file-reduce-line"></i></div>
+    <div class="job-title">
+        <h2 class="title">Título da vaga</h2>
+    </div>
+    <div class="job-category">
+        <p class="paragrafo_1">Doméstica</p>
+    </div>
+    <div class="job-area-label">
+        <p class="paragrafo_2">Área de atuação</p>
+    </div>
+    <div class="job-area">
+        <p class="paragrafo_3">Doméstica</p>
+    </div>
+</div>
+
+
+<div class="job-card">
+    <div class="menu-options">
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+    </div>
+    <div class="context-menu" style="display: none;">
+        <div class="menu-item" data-action="edit">Editar</div>
+        <div class="menu-item" data-action="view">Visualizar</div>
+        <div class="menu-item" data-action="delete">Eliminar</div>
+    </div>
+    <div class="job-icon"><i class="ri-file-reduce-line"></i></div>
+    <div class="job-title">
+        <h2 class="title">Título da vaga</h2>
+    </div>
+    <div class="job-category">
+        <p class="paragrafo_1">Doméstica</p>
+    </div>
+    <div class="job-area-label">
+        <p class="paragrafo_2">Área de atuação</p>
+    </div>
+    <div class="job-area">
+        <p class="paragrafo_3">Doméstica</p>
+    </div>
+</div>
+
+<div class="job-card">
+    <div class="menu-options">
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+    </div>
+    <div class="context-menu" style="display: none;">
+        <div class="menu-item" data-action="edit">Editar</div>
+        <div class="menu-item" data-action="view">Visualizar</div>
+        <div class="menu-item" data-action="delete">Eliminar</div>
+    </div>
+    <div class="job-icon"><i class="ri-file-reduce-line"></i></div>
+    <div class="job-title">
+        <h2 class="title">Título da vaga</h2>
+    </div>
+    <div class="job-category">
+        <p class="paragrafo_1">Doméstica</p>
+    </div>
+    <div class="job-area-label">
+        <p class="paragrafo_2">Área de atuação</p>
+    </div>
+    <div class="job-area">
+        <p class="paragrafo_3">Doméstica</p>
+    </div>
+</div>
+
+<div class="job-card">
+    <div class="menu-options">
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+    </div>
+    <div class="context-menu" style="display: none;">
+        <div class="menu-item" data-action="edit">Editar</div>
+        <div class="menu-item" data-action="view">Visualizar</div>
+        <div class="menu-item" data-action="delete">Eliminar</div>
+    </div>
+    <div class="job-icon"><i class="ri-file-reduce-line"></i></div>
+    <div class="job-title">
+        <h2 class="title">Título da vaga</h2>
+    </div>
+    <div class="job-category">
+        <p class="paragrafo_1">Doméstica</p>
+    </div>
+    <div class="job-area-label">
+        <p class="paragrafo_2">Área de atuação</p>
+    </div>
+    <div class="job-area">
+        <p class="paragrafo_3">Doméstica</p>
+    </div>
+</div>
+
+<div class="job-card">
+    <div class="menu-options">
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+    </div>
+    <div class="context-menu" style="display: none;">
+        <div class="menu-item" data-action="edit">Editar</div>
+        <div class="menu-item" data-action="view">Visualizar</div>
+        <div class="menu-item" data-action="delete">Eliminar</div>
+    </div>
+    <div class="job-icon"><i class="ri-file-reduce-line"></i></div>
+    <div class="job-title">
+        <h2 class="title">Título da vaga</h2>
+    </div>
+    <div class="job-category">
+        <p class="paragrafo_1">Doméstica</p>
+    </div>
+    <div class="job-area-label">
+        <p class="paragrafo_2">Área de atuação</p>
+    </div>
+    <div class="job-area">
+        <p class="paragrafo_3">Doméstica</p>
+    </div>
+</div>
+
+<div class="job-card">
+    <div class="menu-options">
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+    </div>
+    <div class="context-menu" style="display: none;">
+        <div class="menu-item" data-action="edit">Editar</div>
+        <div class="menu-item" data-action="view">Visualizar</div>
+        <div class="menu-item" data-action="delete">Eliminar</div>
+    </div>
+    <div class="job-icon"><i class="ri-file-reduce-line"></i></div>
+    <div class="job-title">
+        <h2 class="title">Título da vaga</h2>
+    </div>
+    <div class="job-category">
+        <p class="paragrafo_1">Doméstica</p>
+    </div>
+    <div class="job-area-label">
+        <p class="paragrafo_2">Área de atuação</p>
+    </div>
+    <div class="job-area">
+        <p class="paragrafo_3">Doméstica</p>
+    </div>
+</div>
+
+<div class="job-card">
+    <div class="menu-options">
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+    </div>
+    <div class="context-menu" style="display: none;">
+        <div class="menu-item" data-action="edit">Editar</div>
+        <div class="menu-item" data-action="view">Visualizar</div>
+        <div class="menu-item" data-action="delete">Eliminar</div>
+    </div>
+    <div class="job-icon"><i class="ri-file-reduce-line"></i></div>
+    <div class="job-title">
+        <h2 class="title">Título da vaga</h2>
+    </div>
+    <div class="job-category">
+        <p class="paragrafo_1">Doméstica</p>
+    </div>
+    <div class="job-area-label">
+        <p class="paragrafo_2">Área de atuação</p>
+    </div>
+    <div class="job-area">
+        <p class="paragrafo_3">Doméstica</p>
+    </div>
+</div>
+
+<div class="job-card">
+    <div class="menu-options">
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+    </div>
+    <div class="context-menu" style="display: none;">
+        <div class="menu-item" data-action="edit">Editar</div>
+        <div class="menu-item" data-action="view">Visualizar</div>
+        <div class="menu-item" data-action="delete">Eliminar</div>
+    </div>
+    <div class="job-icon"><i class="ri-file-reduce-line"></i></div>
+    <div class="job-title">
+        <h2 class="title">Título da vaga</h2>
+    </div>
+    <div class="job-category">
+        <p class="paragrafo_1">Doméstica</p>
+    </div>
+    <div class="job-area-label">
+        <p class="paragrafo_2">Área de atuação</p>
+    </div>
+    <div class="job-area">
+        <p class="paragrafo_3">Doméstica</p>
+    </div>
+</div>
+
+<div class="job-card">
+    <div class="menu-options">
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+    </div>
+    <div class="context-menu" style="display: none;">
+        <div class="menu-item" data-action="edit">Editar</div>
+        <div class="menu-item" data-action="view">Visualizar</div>
+        <div class="menu-item" data-action="delete">Eliminar</div>
+    </div>
+    <div class="job-icon"><i class="ri-file-reduce-line"></i></div>
+    <div class="job-title">
+        <h2 class="title">Título da vaga</h2>
+    </div>
+    <div class="job-category">
+        <p class="paragrafo_1">Doméstica</p>
+    </div>
+    <div class="job-area-label">
+        <p class="paragrafo_2">Área de atuação</p>
+    </div>
+    <div class="job-area">
+        <p class="paragrafo_3">Doméstica</p>
+    </div>
+</div>
+
+<div class="job-card">
+    <div class="menu-options">
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+    </div>
+    <div class="context-menu" style="display: none;">
+        <div class="menu-item" data-action="edit">Editar</div>
+        <div class="menu-item" data-action="view">Visualizar</div>
+        <div class="menu-item" data-action="delete">Eliminar</div>
+    </div>
+    <div class="job-icon"><i class="ri-file-reduce-line"></i></div>
+    <div class="job-title">
+        <h2 class="title">Título da vaga</h2>
+    </div>
+    <div class="job-category">
+        <p class="paragrafo_1">Doméstica</p>
+    </div>
+    <div class="job-area-label">
+        <p class="paragrafo_2">Área de atuação</p>
+    </div>
+    <div class="job-area">
+        <p class="paragrafo_3">Doméstica</p>
+    </div>
+</div>
+
+<div class="job-card">
+    <div class="menu-options">
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+    </div>
+    <div class="context-menu" style="display: none;">
+        <div class="menu-item" data-action="edit">Editar</div>
+        <div class="menu-item" data-action="view">Visualizar</div>
+        <div class="menu-item" data-action="delete">Eliminar</div>
+    </div>
+    <div class="job-icon"><i class="ri-file-reduce-line"></i></div>
+    <div class="job-title">
+        <h2 class="title">Título da vaga</h2>
+    </div>
+    <div class="job-category">
+        <p class="paragrafo_1">Doméstica</p>
+    </div>
+    <div class="job-area-label">
+        <p class="paragrafo_2">Área de atuação</p>
+    </div>
+    <div class="job-area">
+        <p class="paragrafo_3">Doméstica</p>
+    </div>
+</div>
+
+</div>
+
+<!-- Modal -->
+<div id="job-modal" class="modal-backdrop" style="display: none;">
+    <div class="modal">
+        <div class="modal-header">
+            <h2 class="modal-title">Criar vaga</h2>
+            <button class="close-button" id="close-modal">×</button>
+        </div>
+
+        <form id="job-form">
+            <div class="form-group">
+                <label>Foto relacionada à Vaga</label>
+            <div class="dropzone" id="photo-dropzone">
+                <p>Arraste e solte uma imagem aqui ou clique para escolher</p>
+                <small>Formatos: JPEG e PDF - 1MB máx.</small>
+                <input type="file" id="file-input" accept="image/jpeg,application/pdf" style="display: none;">
+                <div id="preview"></div>
+            </div>
+            </div>
+
+            <div class="form-group">
+                <label>Título da Vaga</label>
+                <input type="text" class="form-control" placeholder="Digite o nome da vaga">
+            </div>
+
+            <div class="form-group">
+                <label>Quantidade de candidatos</label>
+                <select class="form-select">
+                    <option>Selecione o número de candidato</option>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Área de Atuação</label>
+                <select class="form-select">
+                    <option>Selecione a área</option>
+                    <option>Doméstica</option>
+                    <option>Administrativa</option>
+                    <option>Comercial</option>
+                    <option>Tecnologia</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Descrição da Vaga</label>
+                <textarea class="form-control" rows="4" placeholder="Escrever"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label>Endereço</label>
+                <input type="text" class="form-control" placeholder="Digite o endereço">
+            </div>
+
+            <div class="form-group">
+                <label>Modalidade</label>
+                <select class="form-select">
+                    <option>Selecione a área</option>
+                    <option>Presencial</option>
+                    <option>Remoto</option>
+                    <option>Híbrido</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Tipo de Contrato</label>
+                <select class="form-select">
+                    <option>Selecione o tipo de contrato</option>
+                    <option>CLT</option>
+                    <option>PJ</option>
+                    <option>Temporário</option>
+                    <option>Estágio</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Salário</label>
+                <input type="text" class="form-control" placeholder="Digite o salário">
+            </div>
+
+            <div class="form-group">
+                <label>Benefícios Oferecidos</label>
+                <select class="form-select">
+                    <option>Selecione o benefício</option>
+                    <option>Vale Transporte</option>
+                    <option>Vale Refeição</option>
+                    <option>Plano de Saúde</option>
+                    <option>Seguro de Vida</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Requisitos</label>
+                <select class="form-select">
+                    <option>Selecione a escolaridade Mínima</option>
+                    <option>Ensino Fundamental</option>
+                    <option>Ensino Médio</option>
+                    <option>Ensino Superior</option>
+                    <option>Pós-graduação</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Experiência exigida</label>
+                <input type="text" class="form-control" placeholder="Digite a experiência">
+            </div>
+
+            <div class="form-group">
+                <label>Data de Início Prevista</label>
+                <input type="text" class="form-control" placeholder="Selecione a data">
+            </div>
+
+            <div class="form-group">
+                <label>Horário de Trabalho</label>
+                <select class="form-select">
+                    <option>Selecione a data</option>
+                    <option>Manhã (8h às 12h)</option>
+                    <option>Tarde (13h às 17h)</option>
+                    <option>Integral (8h às 17h)</option>
+                    <option>Noturno (18h às 22h)</option>
+                </select>
+            </div>
+
+            <button type="submit" class="submit-button">Publicar vaga</button>
+        </form>
+    </div>
+</div>
+
+
+    <script src="/js/vaga.js"></script>
+</body>
+</html>
