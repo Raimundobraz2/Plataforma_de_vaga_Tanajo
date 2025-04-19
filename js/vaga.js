@@ -70,24 +70,7 @@ document.addEventListener('click', () => {
     });
 });
 
-// FUNÇÃO DE AÇÃO (edit/view/delete)
-const handleAction = (action, card) => {
-    const title = card.querySelector('.job-title')?.textContent;
 
-    switch (action) {
-        case 'edit':
-            isEditing = true;
-            submitButton.textContent = 'Salvar alterações';
-            modal.style.display = 'flex';
-            break;
-        case 'view':
-            alert(`Visualizar vaga: ${title}`);
-            break;
-        case 'delete':
-            alert(`Eliminar vaga: ${title}`);
-            break;
-    }
-};
 
 // Clique na área → abre seletor de arquivos
 const dropzone = document.getElementById('photo-dropzone');
@@ -128,7 +111,7 @@ function handleFile(file) {
         return;
     }
 
-    if (file.size > 1024 * 1024) {
+    if (file.size > 7 * 1024 * 1024) {
         alert('Arquivo muito grande. Máximo: 1MB.');
         return;
     }
@@ -151,3 +134,48 @@ function handleFile(file) {
         preview.appendChild(img);
     }
 }
+
+
+
+const handleAction = (action, card) => {
+    const title = card.querySelector('.job-title')?.textContent;
+    const docUrl = card.getAttribute('data-doc-url');
+    const docType = card.getAttribute('data-doc-type');
+
+    switch (action) {
+        case 'edit':
+            isEditing = true;
+            submitButton.textContent = 'Salvar alterações';
+            modal.style.display = 'flex';
+            break;
+
+        case 'view':
+            if (docUrl) {
+                if (docType === 'pdf') {
+                    window.open(docUrl, '_blank');
+                } else if (docType.startsWith('image')) {
+                    const imgWindow = window.open('', '_blank');
+                    imgWindow.document.write(`<img src="${docUrl}" style="max-width:100%;">`);
+                } else {
+                    alert('Formato de documento não suportado.');
+                }
+            } else {
+                alert('Nenhum documento anexado para visualizar.');
+            }
+            break;
+
+        case 'delete':
+            if (docUrl) {
+                const confirmar = confirm(`Deseja realmente eliminar o documento da vaga: ${title}?`);
+                if (confirmar) {
+                    card.removeAttribute('data-doc-url');
+                    card.removeAttribute('data-doc-type');
+                    alert('Documento eliminado com sucesso!');
+                }
+            } else {
+                alert('Nenhum documento encontrado para eliminar.');
+            }
+            break;
+    }
+};
+
