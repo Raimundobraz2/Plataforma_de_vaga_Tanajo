@@ -52,6 +52,7 @@
       color: #4e6af0;
       margin-right: 20px;
       position: relative;
+      cursor: pointer;
   }
 
   .notification-badge {

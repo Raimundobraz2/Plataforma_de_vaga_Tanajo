@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar perfil</title>
+    <link rel="stylesheet" href="../../assets/css/empregador/editar.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="sidebar">
+        <h1 class="sidebar-title">Configurações</h1>
+        <div class="sidebar-menu">
+            <a href="#" class="menu-item">
+                <i class="ri-user-settings-line"></i>
+                Geral
+            </a>
+            <a href="#" class="menu-item active">
+                <i class="ri-user-line"></i>
+                Editar perfil
+            </a>
+            <a href="#" class="menu-item">
+                <i class="ri-donut-chart-line"></i>
+                Preferências
+            </a>
+            <a href="#" class="menu-item">
+                <i class="ri-shield-line"></i>
+                Segurança
+            </a>
+            <a href="#" class="menu-item">
+                <i class="ri-logout-box-line"></i>
+                Encerrar conta
+            </a>
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="back-button">
+            <a href="./vaga.html"><i class="ri-arrow-left-s-line"></i></a>
+        </div>
+
+        <h2 class="content-title">Editar perfil</h2>
+
+        <div class="profile-card">
+            <div class="profile-header">
+                <div class="profile-avatar"><img src="/assets/img/profile-img.png" alt=""></div>
+                <div class="profile-name">Teresa Adriano</div>
+            </div>
+
+            <form id="profileForm">
+                <div class="form-group">
+                    <label for="name" class="form-label">Nome</label>
+                    <div class="input-icon">
+                        <input type="text" id="name" class="form-input" placeholder="Digita o seu nome">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="cargo" class="form-label">Cargo pretendido (ex: Doméstica, Cuidadora, Auxiliar de Limpeza)</label>
+                    <div class="input-icon">
+                        <input type="text" id="email" class="form-input"  placeholder="Adiciona o seu cargo">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="formacao" class="form-label">Formação Acadêmica</label>
+                    <div class="input-icon">
+                        <select id="formacao" class="form-input">
+                            <option value="">Seleciona o nível académico</option>
+                            <option value="ensino-basico">Ensino Básico</option>
+                            <option value="ensino-medio">Ensino Médio</option>
+                            <option value="ensino-tecnico">Ensino Técnico</option>
+                            <option value="graduacao">Graduação</option>
+                            <option value="pos-graduacao">Pós-graduação</option>
+                            <option value="mestrado">Mestrado</option>
+                            <option value="doutorado">Doutorado</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="cargo" class="form-label">Experiência Profissional</label>
+                    <div style="margin-bottom: 16px;">Nome da empresa</div>
+                    <div class="input-icon">
+                        <input type="text" id="email" class="form-input" placeholder="Digita o nome da empresa">
+                    </div>
+                </div>
+                <button type="submit" class="save-button">Salvar alterações</button>
+            </form>
+        </div>
+    </div>
+    <script src="/js/configuracao.js"></script>
+</body>
+</html>
