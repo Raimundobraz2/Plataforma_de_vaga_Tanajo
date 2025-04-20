@@ -64,6 +64,92 @@
       border-radius: 50%;
   }
 
+/* Modal base */
+.notification-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+}
+
+.notification-content {
+    background-color: white;
+    border-radius: 16px;
+    width: 600px;
+    max-height: 80vh;
+    overflow-y: auto;
+    padding: 24px;
+    position: relative;
+}
+
+.notification-header h2 {
+    margin: 0 0 5px;
+}
+
+.notification-header p {
+    margin: 0 0 15px;
+    color: gray;
+}
+
+.notification-actions {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.notification-actions button {
+    background: none;
+    border: none;
+    color: #007bff;
+    cursor: pointer;
+}
+
+.close-modal {
+    position: absolute;
+    top: 20px;
+    right: 24px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* Lista de notificações */
+.notification-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.notification-item {
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: #fafafa;
+    position: relative;
+}
+
+.notification-item h4 {
+    margin: 0 0 5px;
+}
+
+.notification-item p {
+    margin: 0;
+    font-size: 14px;
+}
+
+.notification-time {
+    position: absolute;
+    bottom: 12px;
+    right: 15px;
+    font-size: 12px;
+    color: gray;
+}
+
   .user-avatar {
       border-radius: 50%;
       background-color: var(--color-8);
@@ -79,8 +165,8 @@
   .user-name {
       font-size: 14px;
       color: var(--color-3);
-      font-weight: 300;
       margin-left: 0.4rem;
+      font-weight: 400;
   }
 
   .user-avatar i{
@@ -90,6 +176,7 @@
 .user-container {
     position: relative;
     display: inline-block;
+    margin-top: 1rem;
 }
 
 .user-avatar {

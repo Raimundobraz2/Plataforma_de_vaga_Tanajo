@@ -192,4 +192,21 @@ const userToggle = document.getElementById('user-toggle');
     }
   });
 
+ // notificações
+  const notifModalToggle = document.getElementById('notificationToggle');
+  const notifModalBox = document.getElementById('notificationModal');
+  const notifModalCloseBtn = document.getElementById('closeModal');
 
+  notifModalToggle.addEventListener('click', () => {
+    notifModalBox.style.display = 'flex';
+  });
+
+  notifModalCloseBtn.addEventListener('click', () => {
+    notifModalBox.style.display = 'none';
+  });
+
+  window.addEventListener('click', (e) => {
+    if (e.target === notifModalBox) {
+      notifModalBox.style.display = 'none';
+    }
+  });
