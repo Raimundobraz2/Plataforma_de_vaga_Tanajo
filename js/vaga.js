@@ -135,8 +135,6 @@ function handleFile(file) {
     }
 }
 
-
-
 const handleAction = (action, card) => {
     const title = card.querySelector('.job-title')?.textContent;
     const docUrl = card.getAttribute('data-doc-url');
@@ -178,4 +176,20 @@ const handleAction = (action, card) => {
             break;
     }
 };
+
+
+const userToggle = document.getElementById('user-toggle');
+  const userMenu = document.getElementById('user-menu');
+
+  userToggle.addEventListener('click', () => {
+    userMenu.style.display = userMenu.style.display === 'block' ? 'none' : 'block';
+  });
+
+  // Fecha o menu se clicar fora
+  document.addEventListener('click', (e) => {
+    if (!userToggle.contains(e.target) && !userMenu.contains(e.target)) {
+      userMenu.style.display = 'none';
+    }
+  });
+
 
