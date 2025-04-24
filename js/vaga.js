@@ -179,7 +179,7 @@ const handleAction = (action, card) => {
 
 
 const userToggle = document.getElementById('user-toggle');
-  const userMenu = document.getElementById('user-menu');
+const userMenu = document.getElementById('user-menu');
 
   userToggle.addEventListener('click', () => {
     userMenu.style.display = userMenu.style.display === 'block' ? 'none' : 'block';
