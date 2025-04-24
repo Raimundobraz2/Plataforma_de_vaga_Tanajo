@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vagas</title>
+    <link rel="stylesheet" href="../../assets/css/empregador/candidato.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">TANAJÓ</div>
+        <div class="user-profile">
+            <div class="notification-icon" id="notificationToggle">
+                <i class="ri-notification-line"></i>
+                <span class="notification-badge"></span>
+            </div>
+
+            <div class="user-container" id="user-toggle">
+                <div class="user-avatar">
+                    <img src="/assets/img/profile-img.png" alt="">
+                    <p class="user-name">Teresa Adriano</p>
+                    <i class="ri-arrow-drop-up-line ri-2x"></i>
+                </div>
+
+                <div class="user-menu" id="user-menu">
+                    <div class="menu-item">
+                        <i class="ri-settings-3-line"></i>
+                        <a href="./configuracao.html" class="config">Configurações</a>
+                    </div>
+                    <div class="menu-item">
+                        <i class="ri-logout-box-line"></i>
+                        <a href="/login.html" class="terminar">Terminar sessão</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="sidebar">
+            <div class="sidebar-item ">
+                <i class="ri-window-line"></i>
+                <a href="painel.html" class="painel">Painel de Controle</a>
+            </div>
+            <div class="sidebar-item">
+                <i class="ri-article-line"></i>
+                <a href="vaga.html" class="text_vaga">Vagas</a>
+            </div>
+            <div class="sidebar-item active">
+                <i class="ri-group-line"></i>
+                <a href="#" class="candidato" >Candidatos Inscritos</a>
+            </div>
+            <div class="sidebar-item">
+                <i class="ri-settings-2-line"></i>
+                <a href="configuracao.html">Configurações</a>
+            </div>
+        </div>
+
+        <div class="content">
+        
+            <div class="search-filter">
+    <div class="search-box">
+        <i class="fas fa-search"></i>
+        <input type="text" placeholder="Pesquisa" id="searchInput">
+    </div>
+    <div class="filter-dropdown">
+        <button class="filter-btn" onclick="toggleFilterDropdown()">
+            <i class="ri-filter-3-line"></i>Filtro
+        </button>
+        <div class="filter-options" id="filterOptions">
+            <label><input type="radio" name="filter" value="id" checked> Id</label>
+            <label><input type="radio" name="filter" value="nome"> Nome</label>
+            <label><input type="radio" name="filter" value="cargo"> Cargo desejado</label>
+            <label><input type="radio" name="filter" value="status"> Status da candidatura</label>
+            <label><input type="radio" name="filter" value="data"> Data da inscrição</label>
+        </div>
+    </div>
+</div>
+
+<div class="data-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>Nome completo</th>
+                                <th>Cargo desejado</th>
+                                <th>Cidade / Bairro</th>
+                                <th>Status da Candidatura</th>
+                                <th>Data da Inscrição</th>
+                                <th>Ação</th>
+                            </tr>
+                        </thead>
+                        <tbody id="candidatesList">
+                            <tr class="candidate-row">
+                                <td>1</td>
+                                <td>
+                                    <div style="display: flex; align-items: center;">
+                                        <img src="/assets/img/profile-img.png" alt="Candidate" class="candidate-avatar" style="margin-right: 10px;">
+                                        <span>Usuário</span>
+                                    </div>
+                                </td>
+                                <td>Doméstica</td>
+                                <td>Luanda / Vila Alice</td>
+                                <td><span class="status analise">Em análise</span></td>
+                                <td>10/04/2025</td>
+                                <td>
+                                    <div class="action-icons">
+                                        <i class="ri-eye-line action-icon"></i>
+                                        <i class="fas fa-trash delete-icon action-icon"></i>
+                                    </div>
+                                </td>
+                            </tr>
+                            
+                            <!-- Candidato 2 -->
+                            <tr class="candidate-row">
+                                <td>2</td>
+                                <td>
+                                    <div style="display: flex; align-items: center;">
+                                        <img src="/assets/img/profile-img.png" alt="Candidate" class="candidate-avatar" style="margin-right: 10px;">
+                                        <span>Usuário</span>
+                                    </div>
+                                </td>
+                                <td>Doméstica</td>
+                                <td>Luanda / Vila Alice</td>
+                                <td><span class="status scheduled">Entrevista marcada</span></td>
+                                <td>10/04/2025</td>
+                                <td>
+                                    <div class="action-icons">
+                                        <i class="ri-eye-line action-icon"></i>
+                                        <i class="fas fa-trash delete-icon action-icon"></i>
+                                    </div>
+                                </td>
+                            </tr>
+                            
+                            <tr class="candidate-row">
+                                <td>3</td>
+                                <td>
+                                    <div style="display: flex; align-items: center;">
+                                        <img src="/assets/img/profile-img.png" alt="Candidate" class="candidate-avatar" style="margin-right: 10px;">
+                                        <span>Usuário</span>
+                                    </div>
+                                </td>
+                                <td>Doméstica</td>
+                                <td>Luanda / Vila Alice</td>
+                                <td><span class="status rejected">Rejeitada</span></td>
+                                <td>10/04/2025</td>
+                                <td>
+                                    <div class="action-icons">
+                                        <i class="ri-eye-line action-icon"></i>
+                                        <i class="fas fa-trash delete-icon action-icon"></i>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tr class="candidate-row">
+                                <td>4</td>
+                                <td>
+                                    <div style="display: flex; align-items: center;">
+                                        <img src="/assets/img/profile-img.png" alt="Candidate" class="candidate-avatar" style="margin-right: 10px;">
+                                        <span>Usuário</span>
+                                    </div>
+                                </td>
+                                <td>Doméstica</td>
+                                <td>Luanda / Vila Alice</td>
+                                <td><span class="status rejected">Rejeitada</span></td>
+                                <td>10/04/2025</td>
+                                <td>
+                                    <div class="action-icons">
+                                        <i class="ri-eye-line action-icon"></i>
+                                        <i class="fas fa-trash delete-icon action-icon"></i>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tr class="candidate-row">
+                                <td>5</td>
+                                <td>
+                                    <div style="display: flex; align-items: center;">
+                                        <img src="/assets/img/profile-img.png" alt="Candidate" class="candidate-avatar" style="margin-right: 10px;">
+                                        <span>Usuário</span>
+                                    </div>
+                                </td>
+                                <td>Doméstica</td>
+                                <td>Luanda / Vila Alice</td>
+                                <td><span class="status rejected">Rejeitada</span></td>
+                                <td>10/04/2025</td>
+                                <td>
+                                    <div class="action-icons">
+                                        <i class="ri-eye-line action-icon"></i>
+                                        <i class="fas fa-trash delete-icon action-icon"></i>
+                                    </div>
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+           
+        </div>
+
+        <div id="candidateModal" class="modal">
+            <div class="modal-content">
+                <span class="close-btn" onclick="closeModal()">&times;</span>
+                <h2>Informações do Candidato</h2>
+                <form class="modal-form">
+                    <label>Nome Completo</label>
+                    <input type="text" value="Ana Paula Lima" readonly>
+        
+                    <label>Cargo Desejado</label>
+                    <input type="text" value="Doméstica" readonly>
+        
+                    <label>Cidade / Bairro</label>
+                    <input type="text" value="Luanda / Vila Alice" readonly>
+        
+                    <label>Status da Candidatura</label>
+                    <input type="text" value="Em Análise" readonly>
+        
+                    <label>Data da Inscrição</label>
+                    <input type="text" value="10/04/2025" readonly>
+        
+                    <label>Documentos Enviados</label>
+                <label>Documentos Enviados</label>
+                <button type="button" class="doc-btn" onclick="openDocument('curriculo')">Curriculum Vitae (PDF)</button>
+                <button type="button" class="doc-btn" onclick="openDocument('bi')">Cópia do BI</button>
+        
+                    <label>Enviar notificação</label>
+                    <input type="text" class="input_escrever"   placeholder="Escrever">
+        
+                    <div class="modal-actions">
+                        <button type="button" class="send-btn">Enviar notificação</button>
+                        <button type="button">Aceitar candidatura</button>
+                        <button type="button">Rejeitar Candidatura</button>
+                        <button type="button">Eliminar candidatura</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+
+        <div id="documentModal" class="modal">
+            <div class="modal-content">
+                <span class="close-btn" onclick="closeDocumentModal()">&times;</span>
+                <h3 id="documentTitle">Documento</h3>
+                <div id="documentViewer" style="margin-top: 20px;">
+                    <!-- Aqui pode ser substituído por iframe ou PDF viewer real -->
+                    <p style="font-size: 14px;">Visualização de documento vai aqui...</p>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Modal de Notificações -->
+        <div class="notification-modal" id="notificationModal">
+            <div class="notification-content">
+                <div class="notification-header">
+                    <h2>Notificações</h2>
+                    <p>Acompanhe atualizações importantes em tempo real!</p>
+                    <div class="notification-actions">
+                        <button>Marcar como todas lidas</button>
+                        <button>Limpar notificações</button>
+                    </div>
+                    <i class="ri-close-line close-modal" id="closeModal"></i>
+                </div>
+                <div class="notification-list">
+                    <!-- Notificação individual -->
+                    <div class="notification-item">
+                        <div>
+                            <h4>Nova vaga disponível: Doméstica - Bairro Vila Rosa.</h4>
+                            <p>Descrição: Família busca profissional para serviços gerais e preparo de refeições
+                                simples</p>
+                            <p><strong>Salário:</strong> R$ 1.400,00<br><strong>Horário:</strong> Segunda a sexta,
+                                das 8h às 16h
+                            </p>
+                        </div>
+                        <span class="notification-time">Hoje às 09:25</span>
+                    </div>
+
+                    <div class="notification-item">
+                        <div>
+                            <h4>Nova vaga disponível: Doméstica - Bairro Vila Rosa.</h4>
+                            <p>Descrição: Família busca profissional para serviços gerais e preparo de refeições
+                                simples</p>
+                            <p><strong>Salário:</strong> R$ 1.400,00<br><strong>Horário:</strong> Segunda a sexta,
+                                das 8h às 16h
+                            </p>
+                        </div>
+                        <span class="notification-time">Hoje às 09:25</span>
+                    </div>
+
+                    <div class="notification-item">
+                        <div>
+                            <h4>Nova vaga disponível: Doméstica - Bairro Vila Rosa.</h4>
+                            <p>Descrição: Família busca profissional para serviços gerais e preparo de refeições
+                                simples</p>
+                            <p><strong>Salário:</strong> R$ 1.400,00<br><strong>Horário:</strong> Segunda a sexta,
+                                das 8h às 16h
+                            </p>
+                        </div>
+                        <span class="notification-time">Hoje às 09:25</span>
+                    </div>
+
+                    <div class="notification-item">
+                        <div>
+                            <h4>Nova vaga disponível: Doméstica - Bairro Vila Rosa.</h4>
+                            <p>Descrição: Família busca profissional para serviços gerais e preparo de refeições
+                                simples</p>
+                            <p><strong>Salário:</strong> R$ 1.400,00<br><strong>Horário:</strong> Segunda a sexta,
+                                das 8h às 16h
+                            </p>
+                        </div>
+                        <span class="notification-time">Hoje às 09:25</span>
+                    </div>
+
+                    <div class="notification-item">
+                        <div>
+                            <h4>Nova vaga disponível: Doméstica - Bairro Vila Rosa.</h4>
+                            <p>Descrição: Família busca profissional para serviços gerais e preparo de refeições
+                                simples</p>
+                            <p><strong>Salário:</strong> R$ 1.400,00<br><strong>Horário:</strong> Segunda a sexta,
+                                das 8h às 16h
+                            </p>
+                        </div>
+                        <span class="notification-time">Hoje às 09:25</span>
+                    </div>
+
+                    <!-- Clone a notificação acima para mais itens -->
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+        
+        <script src="/js/candidato.js"></script>
+</body>
+</html>
