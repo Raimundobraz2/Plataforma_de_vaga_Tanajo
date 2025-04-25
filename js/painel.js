@@ -58,8 +58,6 @@ new Chart(ctxVagas, {
     }
 });
 
-
-
 const ctxComparativo = document.getElementById('graficoComparativoCandidaturas').getContext('2d');
 new Chart(ctxComparativo, {
     type: 'bar',

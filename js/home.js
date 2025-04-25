@@ -1,89 +1,107 @@
-const notificationBtn = document.getElementById('notificationButton');
-const profileBtn = document.getElementById('profileButton');
-const applyBtn = document.querySelector('.apply-button');
-const notificationModal = document.getElementById('notificationModal');
-const profileModal = document.getElementById('profileModal');
-const documentModal = document.getElementById('documentModal');
-const closeButtons = document.querySelectorAll('.modal-close');
+const userToggle = document.getElementById('user-toggle');
+const userMenu = document.getElementById('user-menu');
 
-// Abrir modais
-notificationBtn.addEventListener('click', () => {
-    notificationModal.classList.add('active');
-    profileModal.classList.remove('active');
-    documentModal.classList.remove('active');
-});
+  userToggle.addEventListener('click', () => {
+    userMenu.style.display = userMenu.style.display === 'block' ? 'none' : 'block';
+  });
 
-profileBtn.addEventListener('click', () => {
-    profileModal.classList.add('active');
-    notificationModal.classList.remove('active');
-    documentModal.classList.remove('active');
-});
+  // Fecha o menu se clicar fora
+  document.addEventListener('click', (e) => {
+    if (!userToggle.contains(e.target) && !userMenu.contains(e.target)) {
+      userMenu.style.display = 'none';
+    }
+  });
 
-applyBtn.addEventListener('click', () => {
-    documentModal.classList.add('active');
-    notificationModal.classList.remove('active');
-    profileModal.classList.remove('active');
-});
 
-// Fechar modais
-closeButtons.forEach(btn => {
-    btn.addEventListener('click', () => {
-        notificationModal.classList.remove('active');
-        profileModal.classList.remove('active');
-        documentModal.classList.remove('active');
-    });
-});
+  // notificações
+  const notifModalToggle = document.getElementById('notificationToggle');
+  const notifModalBox = document.getElementById('notificationModal');
+  const notifModalCloseBtn = document.getElementById('closeModal');
 
-// Fechar ao clicar fora
-window.addEventListener('click', (e) => {
-    if (e.target === notificationModal) notificationModal.classList.remove('active');
-    if (e.target === profileModal) profileModal.classList.remove('active');
-    if (e.target === documentModal) documentModal.classList.remove('active');
-});
+  notifModalToggle.addEventListener('click', () => {
+    notifModalBox.style.display = 'flex';
+  });
 
-// Drag and drop functionality
-const dropzones = document.querySelectorAll('.dropzone');
+  notifModalCloseBtn.addEventListener('click', () => {
+    notifModalBox.style.display = 'none';
+  });
 
-dropzones.forEach(dropzone => {
-    dropzone.addEventListener('dragover', (e) => {
-        e.preventDefault();
-        dropzone.style.borderColor = '#4c6ef5';
-        dropzone.style.backgroundColor = '#f0f4ff';
-    });
-    
-    dropzone.addEventListener('dragleave', () => {
-        dropzone.style.borderColor = '#ddd';
-        dropzone.style.backgroundColor = '';
-    });
-    
-    dropzone.addEventListener('drop', (e) => {
-        e.preventDefault();
-        dropzone.style.borderColor = '#ddd';
-        dropzone.style.backgroundColor = '';
-        
-        if (e.dataTransfer.files.length) {
-            const file = e.dataTransfer.files[0];
-            alert(`Arquivo "${file.name}" selecionado (${Math.round(file.size / 1024)} KB)`);
-        }
-    });
-    
-    dropzone.addEventListener('click', () => {
-        const input = document.createElement('input');
-        input.type = 'file';
-        input.accept = '.pdf,.jpg,.jpeg,.png';
-        
-        input.onchange = (e) => {
-            if (e.target.files.length) {
-                const file = e.target.files[0];
-                alert(`Arquivo "${file.name}" selecionado (${Math.round(file.size / 1024)} KB)`);
-            }
-        };
-        input.click();
-    });
-});
+  window.addEventListener('click', (e) => {
+    if (e.target === notifModalBox) {
+      notifModalBox.style.display = 'none';
+    }
+  });
 
-// Submit handler
-document.querySelector('.submit-button').addEventListener('click', () => {
-    alert('Documentos enviados com sucesso!');
-    documentModal.classList.remove('active');
-});
+function abrirModal() {
+  document.getElementById('documentModal').style.display = 'flex';
+}
+function fecharModal() {
+  document.getElementById('documentModal').style.display = 'none';
+}
+
+
+function abrirModal() {
+  document.getElementById('documentModal').style.display = 'flex';
+}
+function fecharModal() {
+  document.getElementById('documentModal').style.display = 'none';
+}
+
+
+// Drag & Drop
+function setupDropzone(dropzoneId, inputId) {
+  const dropzone = document.getElementById(dropzoneId);
+  const input = document.getElementById(inputId);
+
+  const originalContent = dropzone.innerHTML; // Guarda o conteúdo inicial do card
+
+  dropzone.addEventListener('click', () => input.click());
+
+  dropzone.addEventListener('dragover', (e) => {
+    e.preventDefault();
+    dropzone.style.borderColor = '#4c6ef5';
+    dropzone.style.backgroundColor = '#f0f4ff';
+  });
+
+  dropzone.addEventListener('dragleave', () => {
+    dropzone.style.borderColor = '#ccc';
+    dropzone.style.backgroundColor = 'transparent';
+  });
+
+  dropzone.addEventListener('drop', (e) => {
+    e.preventDefault();
+    dropzone.style.borderColor = '#ccc';
+    dropzone.style.backgroundColor = 'transparent';
+
+    const file = e.dataTransfer.files[0];
+    if (file) {
+      if (file.size > 5 * 1024 * 1024) {
+        alert("Arquivo muito grande. Máximo 5MB.");
+        return;
+      }
+      mostrarArquivo(dropzone, file);
+    }
+  });
+
+  input.addEventListener('change', () => {
+    const file = input.files[0];
+    if (file) {
+      if (file.size > 5 * 1024 * 1024) {
+        alert("Arquivo muito grande. Máximo 5MB.");
+        return;
+      }
+      mostrarArquivo(dropzone, file);
+    }
+  });
+
+  // Função para exibir o nome do arquivo carregado
+  function mostrarArquivo(dropzone, file) {
+    dropzone.innerHTML = `
+      <p><strong>Arquivo carregado:</strong></p>
+      <p>${file.name}</p>
+    `;
+  }
+}
+
+setupDropzone('dropzone-1', 'file-input-1');
+setupDropzone('dropzone-2', 'file-input-2');
