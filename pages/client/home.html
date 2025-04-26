@@ -10,7 +10,6 @@
 <body>
 <header class="header">
     <a href="#" class="logo">TANAJÓ</a>
-
     <div class="search-bar">
     <i class="ri-search-2-line"></i>
         <input type="text" placeholder="Pesquisa">
@@ -21,7 +20,7 @@
         <i class="ri-home-line"></i>
             Página Inicial
         </a>
-        <a href="#" class="nav-link">
+        <a href="myJobs.html" class="nav-link">
             <i class="ri-article-line"></i>
             Minhas vagas
         </a>
@@ -91,7 +90,7 @@
 
             <div class="action-buttons">
                 <button class="btn-apply" onclick="abrirModal()">Candidatar-se</button>
-                <button class="btn-details">Ver detalhes</button>
+                <button class="btn-details" onclick="event.stopPropagation(); openModal('Casa Limpa', 'Arrumadeira')">Ver detalhes</button>
             </div>
         </div>
     </div>
@@ -130,12 +129,52 @@
                 <input type="file" id="file-input-2" hidden />
             </div>
         </div>
-
-        <button class="submit-btn">Enviar</button>
+        <button class="submit-btn">Enviar documentos</button>
     </div>
 </div>
 
+<!-- Modal (Initially Hidden) -->
+<div id="jobModal" class="modal-overlay_1" style="display: none;">
+    <div class="modal-container_2">
+        <div class="modal-image">
+            <img id="modalImage" src="/assets/img/afea4a4e-fd5d-4607-8886-38d3f665e4bd.jpeg" alt="Profissional de limpeza">
+        </div>
+        <div class="modal-content">
+            <button class="close-button" onclick="closeModal()">×</button>
+            <h2 class="job-title">Empresa: <span id="companyName">Casa Limpa</span></h2>
 
+            <div class="job-details">
+                <div class="job-section">
+                    <span class="job-section-title">Função:</span> <span id="jobRole">Arrumadeira</span>
+                </div>
+
+                <div class="job-section">
+                    <span class="job-section-title">Descrição:</span> Realizar limpeza e organização de ambientes
+                    residenciais, com foco na manutenção da ordem e higiene.
+                </div>
+
+                <div class="job-section">
+                    <span class="job-section-title">Requisitos:</span>
+                    <div>Experiência mínima de 1 ano em serviços domésticos.</div>
+                    <div>Capacidade de trabalhar de forma independente.</div>
+                    <div>Comprometimento e pontualidade.</div>
+                </div>
+
+                <div class="job-section">
+                    <span class="job-section-title">Benefícios:</span>
+                    <div>Alimentação fornecida.</div>
+                    <div>Transporte.</div>
+                    <div>Assistência médica básica.</div>
+                </div>
+
+                <div class="job-meta">
+                    <span>2 dias atrás</span>
+                    <span>Data de Postagem: 02/04/2025</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 <!-- Modal de Notificações -->
 <div class="notification-modal" id="notificationModal">
@@ -214,9 +253,6 @@
         </div>
     </div>
 </div>
-
-
-
  <script src="/js/home.js"></script>
 </body>
 </html>

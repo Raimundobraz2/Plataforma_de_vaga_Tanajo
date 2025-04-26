@@ -105,3 +105,49 @@ function setupDropzone(dropzoneId, inputId) {
 
 setupDropzone('dropzone-1', 'file-input-1');
 setupDropzone('dropzone-2', 'file-input-2');
+
+
+
+
+ // Function to open the modal with dynamic content
+        function openModal(company, role) {
+            // Set dynamic content
+            document.getElementById('companyName').textContent = company;
+            document.getElementById('jobRole').textContent = role;
+            
+            // Show the modal
+            document.getElementById('jobModal').style.display = 'flex';
+            
+            // Prevent scrolling on the background
+            document.body.style.overflow = 'hidden';
+        }
+        
+        // Function to close the modal
+        function closeModal() {
+            document.getElementById('jobModal').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+        
+        // Function to handle job application
+        function applyForJob() {
+            const company = document.getElementById('companyName').textContent;
+            const role = document.getElementById('jobRole').textContent;
+            alert(`Candidatura enviada para ${role} na empresa ${company}!`);
+            closeModal();
+        }
+        
+        // Close modal when clicking outside of it (on the overlay)
+        window.addEventListener('click', function(event) {
+            const modal = document.getElementById('jobModal');
+            if (event.target === modal) {
+                closeModal();
+            }
+        });
+        
+        // Close modal when pressing Escape key
+        window.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeModal();
+            }
+        });
+
