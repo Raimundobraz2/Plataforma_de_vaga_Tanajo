@@ -4,18 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Segurança</title>
-    <link rel="stylesheet" href="../../assets/css/empregador/seguraca.css">
+    <link rel="stylesheet" href="../../assets/css/admin/segurity.css">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
 </head>
 <body>
     <div class="sidebar">
         <h1 class="sidebar-title">Configurações</h1>
         <div class="sidebar-menu">
-            <a href="configuracao.html" class="menu-item">
+            <a href="/pages/admin/config.html" class="menu-item">
                 <i class="ri-user-settings-line"></i>
                 Geral
             </a>
-            <a href="editar.html" class="menu-item">
+            <a href="/pages/admin/edita.html" class="menu-item">
                 <i class="ri-user-line"></i>
                 Editar perfil
             </a>
@@ -23,16 +23,12 @@
                 <i class="ri-shield-line"></i>
                 Segurança
             </a>
-            <a href="encerrar.html" class="menu-item">
-                <i class="ri-logout-box-line"></i>
-                Encerrar conta
-            </a>
         </div>
     </div>
 
     <div class="content">
         <div class="back-button">
-            <a href="./vaga.html"><i class="ri-arrow-left-s-line"></i></a>
+            <a href="/pages/admin/Dashboard.html"><i class="ri-arrow-left-s-line"></i></a>
         </div>
 
         <h2 class="content-title">Segurança</h2>
@@ -50,26 +46,26 @@
                         <input type="text" id="name" class="form-input" placeholder="Digita o seu nome">
                     </div>
                 </div>
-                    <div class="form-group">
-                        <label for="novaSenha" class="form-label">Senha</label>
-                        <div class="input-icon">
-                            <input type="password" id="novaSenha" class="form-input" placeholder="Digite a sua nova senha">
-                            <i class="ri-eye-line toggle-password" onclick="togglePassword('novaSenha', this)"></i>
-                        </div>
+                <div class="form-group">
+                    <label for="novaSenha" class="form-label">Senha</label>
+                    <div class="input-icon">
+                        <input type="password" id="novaSenha" class="form-input" placeholder="Digite a sua nova senha">
+                        <i class="ri-eye-line toggle-password" onclick="togglePassword('novaSenha', this)"></i>
                     </div>
-                    
-                    <div class="form-group">
-                        <label for="confirmaSenha" class="form-label">Confirma nova senha</label>
-                        <div class="input-icon">
-                            <input type="password" id="confirmaSenha" class="form-input" placeholder="Confirme a sua nova senha">
-                            <i class="ri-eye-line toggle-password" onclick="togglePassword('confirmaSenha', this)"></i>
-                        </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="confirmaSenha" class="form-label">Confirma nova senha</label>
+                    <div class="input-icon">
+                        <input type="password" id="confirmaSenha" class="form-input"
+                            placeholder="Confirme a sua nova senha">
+                        <i class="ri-eye-line toggle-password" onclick="togglePassword('confirmaSenha', this)"></i>
                     </div>
+                </div>
                 <button type="submit" class="save-button">Salvar alterações</button>
             </form>
         </div>
     </div>
     <script src="/js/seguraca.js"></script>
 </body>
-
 </html>
